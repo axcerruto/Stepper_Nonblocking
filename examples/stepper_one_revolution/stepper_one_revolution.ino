@@ -13,6 +13,7 @@ Stepper m1(5,4,1000);
 void setup() {
   m1.begin();
   m1.set_direction(0);
+  m1.set_speed(1000);
 }
 
 void loop() {
