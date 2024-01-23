@@ -14,11 +14,13 @@ class Stepper
 		Stepper(int step_pin, int dir_pin);
 		void begin();
 		void step();
+		void rotate(int n);
 		void set_direction(int dir);
 		void set_speed(unsigned long interval);
 	private:
 		int _step_pin;
 		int _dir_pin;
+		int _steps_left;
 		unsigned long _interval;
 		unsigned long _tstamp;
 };
