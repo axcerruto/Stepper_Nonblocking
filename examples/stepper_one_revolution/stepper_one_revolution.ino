@@ -8,7 +8,7 @@ const int stepsPerRevolution = 200;  // change this to fit the number of steps p
 // for your motor
 
 // initialize the stepper library on pins 8 through 11:
-Stepper m1(5,4,1000);
+Stepper m1(5,4);
 
 void setup() {
   m1.begin();
@@ -19,4 +19,3 @@ void setup() {
 void loop() {
   m1.step();
 }
-
