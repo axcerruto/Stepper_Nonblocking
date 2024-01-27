@@ -13,7 +13,7 @@ Stepper::Stepper(int step_pin, int dir_pin)
 	_dir_pin = dir_pin;
 	_interval = 0;
 	_tstamp = micros();
-	_steps_left = 0;
+	steps_left = 0;
 }
 
 void Stepper::begin()
@@ -35,14 +35,14 @@ void Stepper::set_direction(int dir)
 
 void Stepper::rotate(int n)
 {
-	_steps_left = n;
+	steps_left = n;
 }
 
 void Stepper::step()
 {
-	if(micros() - _tstamp > _interval && _steps_left > 0){
+	if(micros() - _tstamp > _interval && steps_left > 0){
 		digitalWrite(_step_pin, 1);
-		_steps_left -= 1;
+		steps_left -= 1;
 		_tstamp = micros();
 	}else{
 		digitalWrite(_step_pin, 0);
